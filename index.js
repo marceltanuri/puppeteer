@@ -6,7 +6,7 @@ async function main() {
     const browser = await puppeteer.launch(
         {
             headless: false,
-            userDataDir: '~/AppData/Local/Application\ Data/Google/Chrome/User\ Data/'
+            userDataDir: __dirname + '/chrome_data'
         });
 
     const page = await browser.newPage();
