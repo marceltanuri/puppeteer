@@ -1,7 +1,8 @@
+$downloadsDir="C:\Users\marce\Downloads"
+$downloadsExtension=".ica"
+
 node $PSScriptRoot/index.js
 
-$downloadsDir="C:\Users\marce\Downloads"
-
-$latestDownload=Get-ChildItem $downloadsDir *.ica -Name | Sort-Object -Descending -Property LastWriteTime | select -First 1
+$latestDownload=Get-ChildItem $downloadsDir *$downloadsExtension -Name | Sort-Object -Descending -Property LastWriteTime | select -First 1
 $latestDownload=$downloadsDir+"\"+$latestDownload
 & $latestDownload
